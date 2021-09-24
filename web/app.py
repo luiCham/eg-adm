@@ -1,5 +1,6 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, url_for
 import requests
+from werkzeug.utils import redirect
 
 app = Flask(__name__, template_folder='templates')
 
@@ -14,9 +15,10 @@ def crearAgrocadena():
 
 @app.route('/guardar-agrocadena',methods=['POST'])
 def guardarAgrocadena():
-    agrocadena= dict(request.values)
+    agrocadena=dict(request.values)
     agrocadena['id'] = int(agrocadena['id'])
     requests.post('http://18.217.185.186:5000/agrocadena',json=agrocadena)
-    return(listarAgrocadenas())
+    print(request.body)
+    return redirect(url_for('listar-agrocadenas'))
 
 app.run(host='0.0.0.0',port=8000)
