@@ -19,6 +19,6 @@ def guardarAgrocadena():
     agrocadena['id'] = int(agrocadena['id'])
     print(agrocadena)
     requests.post('http://18.217.185.186:5000/agrocadena',json=agrocadena)
-    return redirect(url_for('listar-agrocadenas'))
+    return redirect(url_for('/listar-agrocadenas'))
 
 app.run(host='0.0.0.0',port=8000)
