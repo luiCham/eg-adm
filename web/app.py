@@ -13,10 +13,10 @@ def crearAgrocadena():
     return render_template('crearAgrocadena.html')
 
 @app.route('/guardar-agrocadena',methods=['POST'])
-def guardarSensor():
-    sensor = dict(request.values)
-    sensor['precio'] = int(sensor['precio'])
-    requests.post('http://18.217.185.186:5000/agrocadena',json=sensor)
+def guardarAgrocadena():
+    agrocadena= dict(request.values)
+    agrocadena['id'] = int(agrocadena['id'])
+    requests.post('http://18.217.185.186:5000/agrocadena',json=agrocadena)
     return(listarAgrocadenas())
 
 app.run(host='0.0.0.0',port=8000)
