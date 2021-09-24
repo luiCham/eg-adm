@@ -14,42 +14,39 @@
 
 <body class="container">
    
-    <h1 class="form-group text-center">Tipo de Sensor</h1>
-    <form action="/guardarSensor" method="POST" data-toggle="validator" class="jumbotron container" style="width: 60%;">
+    <h1 class="form-group text-center">Agrocadena</h1>
+    <form action="/guardar-agrocadena" method="POST" data-toggle="validator" class="jumbotron container" style="width: 60%;">
 
         <div class="form-group row">
             <div class="col-sm-4">
-                <label>Referencia</label>
-                <input type="text" name="referencia" class="form-control" required>
+                <label>id</label>
+                <input type="number" name="id" class="form-control" min="0" max="9999" required>
             </div>
             <div class="col-sm-6">
-                <label>Nombre</label>    
-                <input type="text"  name="nombre" class="form-control input-sm" maxlength="200" required>
+                <label>Encargado</label>    
+                <input type="text"  name="encargado" class="form-control input-sm" maxlength="200" required>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-5">
-                <label>Variable</label>
-                <select name="variable" class="form-control" required>
-                    {% for item in variables %}
-                        <option value="{{item}}">{{ item }}</option>
-                    {% endfor %}
-                </select>
+              <div class="col-sm-6">
+                <label>Suministro</label>    
+                <input type="text"  name="suministro" class="form-control input-sm" maxlength="200" required>
+              </div>
             </div>
-            <div class="col-sm-4">
-                <label>Precio</label>
-                <input type="number" name="precio" class="form-control" min="0" max="99" required>
+          </div>
+        <div class="form-group row">
+          <div class="col-sm-5">
+            <div class="col-sm-6">
+                <label>Produccion</label>
+                <input type="text" name="produccion" class="form-control" maxlength="200" required>
             </div>
-        </div>
-        
+          </div>
+        </div>  
         <div class="form-group row">
             <div class="col-sm-4">
-                <label>Salida</label>
-                <input type="text" name="salida" class="form-control" required>
-            </div>
-            <div class="col-sm-5">
-                <label>Imagen</label>
-                <input type="url" name="imagen" class="form-control">
+                <label>Distribucion</label>
+                <input type="text" name="Distribucion" class="form-control" maxlength="200" required>
             </div>
        </div>
         <!--Boton para validar campos-->

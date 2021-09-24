@@ -14,20 +14,17 @@
 
 <body class="container">
    
-    <h1 class="form-group text-center">Lista de Sensores</h1>
+    <h1 class="form-group text-center">Lista de Agrocadenas</h1>
 
     <div class="container jumbotron" style="width: 60%;">
     <ul class="list-group">
-        {% for item in sensores %}
+        {% for item in agrocadenas %}
         <li class="list-group-item">
-            <span class="pull-right">
-                {% if item.imagen %}
-                    <img src="{{item.imagen}}" width="100px" height="60px">
-                {% endif %}
-            </span>
-            <b>Referencia</b>: {{item.referencia}}<br>
-            <b>Nombre</b>: {{item.nombre}}<br>
-            <b>Precio</b>: {{item.precio}}<br>
+            <b>id</b>: {{item.id}}<br>
+            <b>suministro</b>: {{item.suministro}}<br>
+            <b>produccion</b>: {{item.produccion}}<br>
+            <b>distribucion</b>: {{item.distribucion}}<br>
+            <b>encargado</b>: {{item.encargado}}<br>
         </li>
         {% endfor %}
     </ul>
